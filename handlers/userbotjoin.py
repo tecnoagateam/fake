@@ -13,8 +13,6 @@ async def addchannel(client, message):
     chid = message.chat.id
     try:
         invitelink = await client.export_chat_invite_link(chid)
-        if invitelink.startswith("https://t.me/+"):
-            invitelink = invitelink.replace("https://t.me/+","https://t.me/joinchat/")
     except:
         await message.reply_text(
             "<b>Add me as admin of yor group first</b>",
@@ -24,7 +22,7 @@ async def addchannel(client, message):
     try:
         user = await USER.get_me()
     except:
-        user.first_name =  "Music"
+        user.first_name =  "LedyMusicAssistant"
 
     try:
         await USER.join_chat(invitelink)
