@@ -18,9 +18,6 @@ logger = logging.getLogger(__name__)
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 
-@Client.on_callback_query(filter.regex("cls"))
-async def cls(_, query: CallbackQuery):
-    await query.message.delete()
 
 
 @Client.on_message(command(["axtar", f"axtar@{bn}"]))
